@@ -23,3 +23,5 @@ and `BUILD` which is Bazel's declarative form of defining a build in terms of `r
 This build it's outfitted with Meetup's blt pipeline interface (Makefile)
 
 At to moment only `test` is implemented. `package` and `publish` are not.
+
+A list of avalable `bazel` commands can be found [here](https://bazel.build/versions/master/docs/bazel-user-manual.html)
