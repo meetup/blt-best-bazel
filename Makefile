@@ -4,6 +4,7 @@ VERSION ?= 0.2.$(CI_BUILD_NUMBER)
 
 test: ## runs tests
 	@bazel test //...
+	@cat ./bazel-out/local-fastbuild/testlogs/*/test.log
 
 package: test ## packagees artifact
 	@echo "Package not implemented"
