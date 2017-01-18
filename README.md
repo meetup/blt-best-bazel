@@ -19,3 +19,7 @@ $ apm install language-bazel
 
 The files relevant to Bazel are `WORKSPACE` which defines a context for a Bazel run,
 and `BUILD` which is Bazel's declarative form of defining a build in terms of `rules`
+
+This build it's outfitted with Meetup's blt pipeline interface (Makefile)
+
+At to moment only `test` is implemented. `package` and `publish` are not.
