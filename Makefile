@@ -3,8 +3,7 @@ VERSION ?= 0.2.$(CI_BUILD_NUMBER)
 .DEFAULT_GOAL: package
 
 test: ## runs tests
-	@bazel test //...
-	@cat ./bazel-out/local-fastbuild/testlogs/*/test.log
+	@bazel test --test_output all //...
 
 package: test ## packagees artifact
 	@echo "Package not implemented"
