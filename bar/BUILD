@@ -1,8 +1,6 @@
 load(
-  "@io_bazel_rules_scala//scala:scala.bzl",
+  "//local_tools/scala:scala.bzl",
   "scala_library",
-  "scala_binary",
-  "scala_test"
 )
 
 scala_library(
@@ -15,6 +13,5 @@ scala_library(
     ),
     deps = [
       "//foo"
-    ],
-    scalacopts = ["-Yskip-inline-info-attribute"]
+    ]
 )

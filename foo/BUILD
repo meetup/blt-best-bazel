@@ -1,9 +1,12 @@
 # load definitions for our scala rules
 load(
   "@io_bazel_rules_scala//scala:scala.bzl",
-  "scala_library",
-  "scala_binary",
   "scala_test"
+)
+
+load(
+  "//local_tools/scala:scala.bzl",
+  "scala_library",
 )
 
 # declare a package named best-mixed-scala-java
@@ -16,8 +19,7 @@ scala_library(
         "src/main/scala/**/*.scala",
         "src/main/java/**/*.java"
       ]
-    ),
-    scalacopts = ["-Yskip-inline-info-attribute"]
+    )
 )
 
 # run some scala tests

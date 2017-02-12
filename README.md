@@ -15,6 +15,10 @@ If you use atom you may want language highlighting
 $ apm install language-bazel
 ```
 
+You may also wish to install [buildifer](https://github.com/bazelbuild/buildifier#usage) for BUILD
+file formatting.
+
+
 ## usage
 
 The files relevant to Bazel are `WORKSPACE` which defines a context for a Bazel run,
@@ -25,3 +29,12 @@ This build it's outfitted with Meetup's blt pipeline interface (Makefile)
 At to moment only `test` is implemented. `package` and `publish` are not.
 
 A list of avalable `bazel` commands can be found [here](https://bazel.build/versions/master/docs/bazel-user-manual.html)
+
+some additional recommendations to experiment with
+
+
+* [strategy](https://github.com/bazelbuild/rules_scala/issues/125#issuecomment-279184926)
+
+```
+build --strategy=Scalac=worker ...
+```
