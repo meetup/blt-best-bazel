@@ -1,4 +1,4 @@
-package com.meetup.blt;
+package com.meetup.blt.foo;
 
 public class BestJava {
     public static String greetJava(String name) {

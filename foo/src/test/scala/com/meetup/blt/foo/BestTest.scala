@@ -1,4 +1,4 @@
-package com.meetup.blt
+package com.meetup.blt.foo
 
 import org.scalatest._
 

@@ -9,23 +9,25 @@ load(
 # declare a package named best-mixed-scala-java
 # with mixed scala/java sources
 scala_library(
-    name = "best-mixed-scala-java",
+    name = "foo",
+    visibility = ["//visibility:public"],
     srcs = glob(
       [
         "src/main/scala/**/*.scala",
         "src/main/java/**/*.java"
       ]
-    )
+    ),
+    scalacopts = ["-Yskip-inline-info-attribute"]
 )
 
 # run some scala tests
 scala_test(
-  name = "best-mixed-scala-java-test",
+  name = "foo-test",
   size = "small", # scala apparently generates "big" tests?
   srcs = glob(
     ["src/test/scala/**/*.scala"]
   ),
   deps = [
-        ":best-mixed-scala-java",
+        ":foo",
     ]
 )

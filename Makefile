@@ -13,6 +13,8 @@ publish: package ## publishes artifact
 
 .PHONY: help
 
-# see http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%10s\033[0m %s\n", $$1, $$2}'
+help: ## print out all available commands
+	@echo Public targets:
+	@grep -E '^[^_][^_][a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@echo "Private targets: (use at own risk)"
+	@grep -E '^__[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[35m%-20s\033[0m %s\n", $$1, $$2}'
