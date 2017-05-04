@@ -3,7 +3,7 @@ VERSION ?= 0.2.$(CI_BUILD_NUMBER)
 .DEFAULT_GOAL: package
 
 test: ## runs tests
-	@bazel test --test_output all //...
+	@bazel test --test_output streamed //...
 
 package: test ## packagees artifact
 	@echo "Package not implemented"
